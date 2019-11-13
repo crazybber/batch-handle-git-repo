@@ -1,3 +1,5 @@
+#!/bin/bash
+
 code_repo_list=(
 'repo-1'
 'repo-2'
