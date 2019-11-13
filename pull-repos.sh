@@ -1,3 +1,5 @@
+#!/bin/bash
+
 code_repo_list=(
 'abcdee'
 '12345'
