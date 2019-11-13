@@ -16,32 +16,31 @@ echo "###########${time} Begin Add Remote Repo"
 function add_remote_repo(){
 
 
-target_repo_url_osc="${prefix_url_osc}${1}.git"
+target_repo_url="${prefix_url_osc}${1}.git"
 
-git remote | grep -i -E "${target_repo}" > nul &&  echo "${time} target repo found in ${PWD}" && return
+git remote | grep -i -E $target_repo > nul &&  echo "${time} target repo found in ${PWD}" && return
 
-if [ -Z "$remote_target_repo_branch" ]; then
-    echo "###Repo ${remote_target_repo_branch} will be added ###"
-	git remote add osc $target_repo_url_osc
+if [ -Z $target_repo ]; then
+    echo "###Repo ${target_repo_url} will be added ###"
+	git remote add osc $target_repo_url
 	let index_count+=1
 fi
 
 }
 
 
-###main loop start to add repo
+###main loop start to sync all code repo
 function start_to_add_repo(){
 
 echo "###########Repo Count : ${#code_repo_list[@]} in Total"
 
 for repodir in ${code_repo_list[@]}
 do
-if [ -d "$repodir" ]; then
-    
-	cd "$repodir"
+if [ -d "${repodir}" ]; then
+	cd "${repodir}"
 	time=$(date "+%Y-%m-%d %H:%M:%S")
 #	echo "${time} Begin Handle remote For Repo: ${repodir}"
-	add_remote_repo $repodir	
+	add_remote_repo $repodir
 	cd ..
 	time=$(date "+%Y-%m-%d %H:%M:%S")
 #	echo "${time} Finished add remote repo ,Return to: ${PWD}"
@@ -58,6 +57,6 @@ echo "###########Repo Count : ${#code_repo_list[@]}, Added: ${index_count} skipe
 start_to_add_repo
 
 time=$(date "+%Y-%m-%d %H:%M:%S")	
-echo "###########${time} Finished Add Remote Repo"
+echo "###########${time} Finished to Add Remote Repo"
 
 read -n1 -p "Press any key to continue..."
