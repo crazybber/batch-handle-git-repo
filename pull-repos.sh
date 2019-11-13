@@ -20,7 +20,7 @@ echo "Clone repo: ${courrentrepo} in: ${PWD}"
 git clone $courrentrepo || echo "${time} error occored ,when cloning ${courrentrepo}" && return
 cd "${1}"
 testbranch=$(git branch -a | grep develop | sed 's/ //g')
-if [ -n "${testbranch}" ] ;then
+if [ -n $testbranch ] ;then
 	echo "Branch Develop Found in: ${PWD},will checkout it"
 	git checkout -b develop origin/develop
 fi
