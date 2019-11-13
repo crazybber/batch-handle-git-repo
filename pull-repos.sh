@@ -37,7 +37,7 @@ if [ ! -d "$repodir" ]; then
 	cd "$repodir"
 	time=$(date "+%Y-%m-%d %H:%M:%S")
 #	echo "${time} Begin Handle remote For Repo: ${repodir}"
-	add_remote_repo $repodir
+	pull_remote_repo $repodir
 	cd ..
 	time=$(date "+%Y-%m-%d %H:%M:%S")
 #	echo "${time} Finished add remote repo ,Return to: ${PWD}"
