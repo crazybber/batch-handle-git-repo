@@ -45,7 +45,7 @@ fi
 
 done
 
-let skiped_cout= #code_repo_list[@]-index_count
+let skiped_cout=${#code_repo_list[@]}-index_count
 
 time=$(date "+%Y-%m-%d %H:%M:%S")
 
