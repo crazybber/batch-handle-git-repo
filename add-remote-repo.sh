@@ -51,7 +51,7 @@ done
 
 let skiped_cout=${#code_repo_list[@]}-index_count
 
-echo "###########Repo Count : ${#code_repo_list[@]}, Pulled: ${index_count} skiped ${skiped_cout}."
+echo "###########Repo Count : ${#code_repo_list[@]}, Added: ${index_count} skiped ${skiped_cout}."
 
 }
 
