@@ -26,8 +26,8 @@ if [ $current_branch_name != develop ];then
 #it checkout develop >> ../syncLog.txt 2>&1
 #develop branch first
 	remote_source_repo_branch=$(git branch | grep -i -E 'develop' | sed 's/* //g')
-	echo "target branch is ${remote_source_repo_branch}"
 	if [ -n "$remote_source_repo_branch" ];then
+		echo "branch develop found: ${remote_source_repo_branch}"
 		git checkout develop
 	else
 	#point to current
