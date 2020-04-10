@@ -22,7 +22,7 @@ do
 	echo "${time} Change to: ${PWD}"
     echo "${time} Begin to del nul: ${dir}"
 	rm nul
-	echo "${time} End in Repo: ${dir}"
+	echo "${time} End in : ${dir}"
     cd ..
 	echo "${time} Return to: ${PWD}"
  
