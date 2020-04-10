@@ -29,7 +29,7 @@ do
   fi
 done
 
-echo "###########Dir Count : ${#code_repo_list[@]}, deleted: ${index_count}."
+echo "###########Dir Count : deleted: ${index_count}."
 }
 
 
