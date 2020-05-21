@@ -8,7 +8,8 @@ index_count=0
 
 time=$(date "+%Y-%m-%d %H:%M:%S")
 
-filename=nul
+## file name to remove
+filename= 
 
 echo "###########${time} Begin Del ${filename}"
 
