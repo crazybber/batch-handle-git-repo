@@ -18,8 +18,7 @@ current_branch_name=$(git symbolic-ref --short -q HEAD)
 remote_source_repo_branch='develop'
 echo "###Repo ${1} :current branch is [${current_branch_name}]###"
 #echo "###Repo ${1} :current branch is [${current_branch_name}]###" >> ../syncLog.txt 2>&1
-#	git reset --hard >> ../syncLog.txt 2>&1	
-git reset --hard >>nul 2>&1	
+git reset --hard >> ../errorLog.txt 2>&1	
 if [ $current_branch_name != develop ];then
 	echo "###Repo ${1} : will check branch [develop]###"
 #echo "###Repo ${1} :checkout branch [develop]###" >> ../syncLog.txt 2>&1
